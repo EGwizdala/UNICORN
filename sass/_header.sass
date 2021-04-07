@@ -1,0 +1,63 @@
+#headerGroup
+    height: 150pX
+    width: $main-width
+    position: relative
+    background-color: none
+
+    nav
+        height: 60px
+        background-color: none
+        +position(0,0,auto,auto)
+
+    .rainbow
+        background-color: none
+        +position(auto,auto,0,0)
+        height: 150px
+        width: auto
+        z-index: -2
+
+        img
+            width: auto
+            height: 100%
+    .unicorn
+        background-color: none
+        position: relative
+        height: 100%
+        width: 100%
+        z-index: -1
+
+        .camper img
+            +position(auto,auto,0,$camper-left)
+            width: auto
+            height: $camper-height
+        .wings img
+            +position(auto,auto,$wings-bottom,$wings-left)
+            width: auto
+            height: $wings-height
+            z-index: 1
+        .star1 img
+            +position($star-top,auto,auto,$star-left)
+            width: auto
+            height: $star-height
+            transform: rotate(0)
+            z-index: 1
+        .star2 img
+            +position($star2-top,auto,auto,$star2-left)
+            width: auto
+            height: $star2-height
+            transform: $star2-rotate
+            z-index: 1
+        .star3 img
+            +position($star3-top,auto,auto,$star3-left)
+            width: auto
+            height: $star3-height
+            transform: $star3-rotate
+            z-index: 1
+h1
+    font-family: $header-font
+    width: 100%
+    text-align: center
+    +font-upperCase (4rem, $h1-height)
+    background-color: $dark-txt-color
+    color: $bright-txt-color
+    letter-spacing: 2px

@@ -1,0 +1,84 @@
+@import _reset
+@import _var
+@import _mixin
+@import _header
+@import _maps
+@import ../node_modules/hamburgers/_sass/hamburgers/hamburgers
+
+body
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    flex-wrap: no-wrap
+    font-family: $main-font
+    color: $dark-txt-color
+    height: auto
+    margin: auto
+
+header
+    width: $main-width
+    height: auto
+
+#intro
+    width: $main-width
+    background-color: none
+    img
+        width: 100%
+    .caption
+        +center-flex
+        flex-direction: column
+        width: 100%
+        span
+            font-size: 5rem
+            font-family: $header-font
+            line-height: 10rem
+        i
+            font-size: 7rem
+            color: $orange
+
+main
+    width: $main-width
+
+    article
+        background-color: yellow
+        display: grid
+        grid-template-columns: 1fr 2fr
+        grid-template-rows: auto
+        grid-template-areas: "time h4" "h2 h2" "postImg postImg" "p1 p1" "routeMap routeMap" "mapCaption mapCaption" "p2 p2" "gallery gallery"
+        grid-gap: 10px
+        width: 100%
+    time
+        grid-column: 1/2
+        grid-row: 1/2
+        font-size: 1.6rem
+        grid-area: time
+    h4
+        grid-column: 2/3
+        grid-row: 1/2
+        grid-area: h4
+        font-size: 1.6rem
+    h2
+        grid-area: h2
+        font-size: 3rem
+    .postImg
+        grid-area: postImg
+        grid-column: 1/3
+        grid-row: 3/4
+        place-self: center
+        width: 290px
+        height: 185px
+        border-radius: 23px
+        overflow: hidden
+        box-shadow: 4px -4px 24px -3px rgba(0,0,0,0.56)
+        position: relative
+        img
+            width: 100%
+            position: absolute
+            transform: translate(-50%, -50%)
+            top: 50%
+            left: 50%
+
+footer
+    width: $main-width
+    background-color: pink
