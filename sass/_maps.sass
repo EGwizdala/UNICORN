@@ -17,29 +17,35 @@
     .tag
         +center-flex
         flex-direction: row
-        height: 10rem
+        height: 8rem
         .pin
-            height: 5rem
+            height: 4rem
             width: auto
         div
-            font-size: 4rem
+            font-size: 3rem
             font-family: $header-font
 
     .map
         grid-column: 1/3
         grid-row: 2/3
         grid-area: map
-        +center-flex
+        display: inline-block
+        text-align: center
+        width: 100vw
+        padding: 10px 25px
+      
+
     #map
+      
         fill: $light-gray
         path:hover
             cursor: pointer
             fill: $dark-txt-color
 
     .btn
-        margin: 5rem 0 10rem 0
-        height: 5rem
-        width: 25rem
+        margin: 2rem 0 3rem 0
+        height: 4rem
+        width: 16rem
         font-family: $header-font
         color: $bright-txt-color
         background-color: $orange
@@ -49,12 +55,13 @@
         align-items: center
         border-radius: 20px
         place-self: center
+        cursor: pointer
         div
-            font-size: 4rem
+            font-size: 3rem
             flex-grow: 1
 
         i
-            font-size: 3rem
+            font-size: 2.5rem
             flex-basis: 20%
 
     .btn:first-child

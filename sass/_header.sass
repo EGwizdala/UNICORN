@@ -23,36 +23,38 @@
         background-color: none
         position: relative
         height: 100%
-        width: 100%
-        z-index: -1
+        width: 200px
+        margin: auto
 
-        .camper img
-            +position(auto,auto,0,$camper-left)
-            width: auto
-            height: $camper-height
         .wings img
             +position(auto,auto,$wings-bottom,$wings-left)
+            bottom: $wings-bottom
+            left: $wings-left
             width: auto
             height: $wings-height
             z-index: 1
-        .star1 img
-            +position($star-top,auto,auto,$star-left)
-            width: auto
-            height: $star-height
-            transform: rotate(0)
-            z-index: 1
-        .star2 img
-            +position($star2-top,auto,auto,$star2-left)
-            width: auto
-            height: $star2-height
-            transform: $star2-rotate
-            z-index: 1
-        .star3 img
-            +position($star3-top,auto,auto,$star3-left)
-            width: auto
-            height: $star3-height
-            transform: $star3-rotate
-            z-index: 1
+        .camper img
+            +position(auto,auto,0,$camper-left)
+            width: 100%
+            height: $camper-height
+    .star1 img
+        +position($star-top,auto,auto,$star-left)
+        width: auto
+        height: $star-height
+        transform: rotate(0)
+        z-index: 1
+    .star2 img
+        +position($star2-top,auto,auto,$star2-left)
+        width: auto
+        height: $star2-height
+        transform: $star2-rotate
+        z-index: 1
+    .star3 img
+        +position($star3-top,auto,auto,$star3-left)
+        width: auto
+        height: $star3-height
+        transform: $star3-rotate
+        z-index: 1
 h1
     font-family: $header-font
     width: 100%

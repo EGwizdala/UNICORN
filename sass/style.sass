@@ -3,6 +3,7 @@
 @import _mixin
 @import _header
 @import _maps
+@import _intro
 @import ../node_modules/hamburgers/_sass/hamburgers/hamburgers
 
 body
@@ -20,64 +21,94 @@ header
     width: $main-width
     height: auto
 
-#intro
-    width: $main-width
-    background-color: none
-    img
-        width: 100%
-    .caption
-        +center-flex
-        flex-direction: column
-        width: 100%
-        span
-            font-size: 5rem
-            font-family: $header-font
-            line-height: 10rem
-        i
-            font-size: 7rem
-            color: $orange
 
 main
     width: $main-width
+    
 
     article
-        background-color: yellow
+       
+        background-color: none
         display: grid
         grid-template-columns: 1fr 2fr
         grid-template-rows: auto
-        grid-template-areas: "time h4" "h2 h2" "postImg postImg" "p1 p1" "routeMap routeMap" "mapCaption mapCaption" "p2 p2" "gallery gallery"
-        grid-gap: 10px
+        grid-template-areas: "time h4" "h2 h2" "postImg postImg" "p1 p1" "routeMap routeMap" "mapCaption mapCaption" "p2 p2" "slider slider" "button button"
+        grid-gap: 10px 15px
         width: 100%
     time
-        grid-column: 1/2
-        grid-row: 1/2
+        padding-left: 30px
         font-size: 1.6rem
         grid-area: time
     h4
-        grid-column: 2/3
-        grid-row: 1/2
         grid-area: h4
         font-size: 1.6rem
+        text-transform: uppercase
     h2
+        padding: $main-padding
         grid-area: h2
-        font-size: 3rem
+        font-size: 2.5rem
+        font-weight: 600
+
     .postImg
+        margin: $main-padding
         grid-area: postImg
-        grid-column: 1/3
-        grid-row: 3/4
         place-self: center
-        width: 290px
-        height: 185px
+        width: $img-width
+        height: $img-height
         border-radius: 23px
         overflow: hidden
         box-shadow: 4px -4px 24px -3px rgba(0,0,0,0.56)
         position: relative
         img
             width: 100%
+            object-fit: cover
+            object-position: bottom
             position: absolute
             transform: translate(-50%, -50%)
             top: 50%
             left: 50%
+    .p1
+        grid-area: p1
+        +paragraph
+
+    #routeMap
+        grid-area: routeMap
+        height: 400px
+        width: 100%
+
+    .mapCaption
+        margin: $main-padding
+        margin: $main-padding
+        grid-area: mapCaption
+        width: 100%
+        display: flex
+        flex-flow: row no-wrap
+        justify-content: flex-start
+        align-items: cener
+        span 
+            font-size: 1.6rem
+            &:first-child
+                width: 15% 
+            &:last-child
+                font-weight: bolder
+        
+
+            
+
+        
+    .p2
+        grid-area: p2
+        +paragraph
+
+    .slider
+        grid-area: slider
+        width: 100vw
+        height: 
+        img
+            width: 100%
+
+    .button
+        grid-area: button
 
 footer
     width: $main-width
