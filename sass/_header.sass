@@ -25,7 +25,7 @@
         height: 100%
         width: 200px
         margin: auto
-
+       
         .wings img
             +position(auto,auto,$wings-bottom,$wings-left)
             bottom: $wings-bottom
@@ -33,28 +33,50 @@
             width: auto
             height: $wings-height
             z-index: 1
+            // animation: camper-up-down 2s linear infinite alternate
         .camper img
             +position(auto,auto,0,$camper-left)
             width: 100%
             height: $camper-height
+            // animation: camper-up-down 2s linear infinite alternate
+        .wheel img
+            +position(auto,auto,0,40%)
+            width: 12%
+            height: auto
+            // animation: wheel-rotate 8s linear infinite
+        .wheel2 img
+            +position(auto,auto,0,70%)
+            width: 12%
+            height: auto
+            // animation: wheel-rotate 8s linear infinite
+        .smoke img
+            +position(auto,auto,0,8%)
+            width: 30%
+            height: auto
+            opacity: 0
+            // animation: smoke 5s linear 0s infinite 
+            z-index: -2
     .star1 img
         +position($star-top,auto,auto,$star-left)
         width: auto
         height: $star-height
         transform: rotate(0)
-        z-index: 1
+        z-index: -1
+        animation: star-rotate 8s linear infinite 
     .star2 img
         +position($star2-top,auto,auto,$star2-left)
         width: auto
         height: $star2-height
         transform: $star2-rotate
-        z-index: 1
+        z-index: -1
+        // animation: star-rotate 5s linear reverse infinite
     .star3 img
         +position($star3-top,auto,auto,$star3-left)
         width: auto
         height: $star3-height
         transform: $star3-rotate
-        z-index: 1
+        z-index: -1
+        // animation: star-rotate 5s linear infinite
 h1
     font-family: $header-font
     width: 100%

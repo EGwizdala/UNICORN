@@ -1,0 +1,49 @@
+.navChanger
+    width: $main-width
+    height: 50px
+    +center-flex
+    flex-flow: row no-wrap
+    div i
+        font-size: 2.5rem
+        width: 30px
+    ul
+        +center-flex
+        flex-flow: row no-wrap
+        li
+             font-size: 2.5rem
+             width: 30px
+        li:nth-child(2)
+            color: $red
+footer
+    width: $main-width
+   
+    background-color: $light-gray
+    p
+        font-size: 1.4rem
+        margin: $main-padding
+        margin-top: 15px
+        text-align: justify 
+       
+    .navBottom
+        font-size: 1.4rem
+        margin: $main-padding
+        padding-top: 15px
+        padding-bottom: 15px
+        text-transform: uppercase
+        font-weight: bold
+        div
+            font-size: 1.4rem
+            height: 2.2rem
+            line-height: 2.2rem
+    
+        ul
+            display: flex
+            justify-content: stretch
+            align-items: center
+            width: 100%
+            li
+                line-height: 2.2rem
+                font-size: 1.4rem
+                width: 25%
+                font-weight: normal
+                text-transform: none

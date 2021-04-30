@@ -1,0 +1,105 @@
+main
+    width: $main-width
+    
+
+    article
+        margin: 30px 0
+        background-color: none
+        display: grid
+        grid-template-columns: 1fr 2fr
+        grid-template-rows: auto
+        grid-template-areas: "time h4" "h2 h2" "postImg postImg" "p1 p1" "routeMap routeMap" "mapCaption mapCaption" "p2 p2" "slider slider" "p3 p3" ". button"
+        grid-gap: 10px 15px
+        width: 100%
+    time
+        padding-left: 30px
+        font-size: 1.6rem
+        grid-area: time
+    h4
+        grid-area: h4
+        font-size: 1.6rem
+        text-transform: uppercase
+    h2
+        padding: $main-padding
+        grid-area: h2
+        font-size: 2.5rem
+        font-weight: 600
+
+    .postImg
+        margin: $main-padding
+        grid-area: postImg
+        place-self: center
+        width: $img-width
+        height: $img-height
+        border-radius: 23px
+        overflow: hidden
+        box-shadow: 4px -4px 24px -3px rgba(0,0,0,0.56)
+        position: relative
+    img
+        width: 100%
+        object-fit: cover
+        object-position: bottom
+        position: absolute
+        transform: translate(-50%, -50%)
+        top: 50%
+        left: 50%
+    .p1
+        grid-area: p1
+        +paragraph
+
+    #routeMap
+        grid-area: routeMap
+        height: 400px
+        width: 100%
+
+    .mapCaption
+        margin: $main-padding
+        margin: $main-padding
+        grid-area: mapCaption
+        width: 100%
+        display: flex
+        flex-flow: column no-wrap
+        justify-content: flex-start
+        align-items: cener
+        span 
+            font-size: 1.6rem
+            &:first-child
+                width: 15% 
+            &:last-child
+                font-weight: bolder
+    .p2
+        grid-area: p2
+        +paragraph
+    .p3
+        grid-area: p3
+        +paragraph
+
+    .slider
+        grid-area: slider
+        width: 100vw
+        height: $img-height
+        overflow: hidden
+        position: relative
+  
+    .btn
+        grid-area: button
+        margin: 20px 30px 30px
+        height: 3.6rem
+        width: 16rem
+        color: $bright-txt-color
+        background-color: $orange
+        display: flex
+        flex-direction: row no-wrap
+        justify-content: flex-start
+        align-items: center
+        justify-self: end
+        border-radius: 20px
+        cursor: pointer
+        div
+            font-size: 1.6rem
+            flex-grow: 1
+            text-align: left
+            margin-left: 15px
+        i
+            font-size: 2rem
+            flex-basis: 35%
