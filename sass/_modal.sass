@@ -1,16 +1,17 @@
 .wrap
     position: fixed
-    top: 20px
-    left: 0
+    top: 10px
+    left: -100vw
     width: 100vw
+    z-index: 10
     +center-flex
-    
-.is-active 
+
+.is-active
     display: block
 .display
-    display: none   
+    display: none
 
-.modal 
+.modal
     position: relative
     background-color: #fff
     padding: 2em 3em
@@ -18,20 +19,40 @@
     width: 90%
     z-index: 100
     opacity: 0.5
-    
-    .modal-image 
-        width: 40px
-        height: 40px
-        margin: 0 auto
-        border-radius: 50%
-        box-shadow: 0 0 0 2px #48DB71
-        padding: 11px 10px 2px
-        margin-bottom: 1rem
-    h1 
+    height: 95vh
+    overflow: scroll
+    // .modal-image 
+    //     width: 40px
+    //     height: 40px
+    //     margin: 0 auto
+    //     border-radius: 50%
+    //     box-shadow: 0 0 0 2px #48DB71
+    //     padding: 11px 10px 2px
+    //     margin-bottom: 1rem
+
+    .close
+        display: inline-block
+        cursor: pointer
+        position: absolute
+        width: 50px
+        height: 50px
+        line-height: 50px
+        text-align: center
+        top: 2px
+        right: 2px
+        transform: translate(0%, 0%)
+        font-size: 4rem
+        font-weight: bold
+        &:hover
+            animation: scale 0.5s linear  alternate
+            color: $red
+       
+
+    h1
         font-size: 2.2rem
         font-weight: bold
-        margin-bottom: 1.5em
-       
+        margin: 1.5em 0
+
     form
         display: flex
         justify-content: flex-start
@@ -54,7 +75,7 @@
                 font-weight: bolder
                 flex-grow: 1
                 height: 3rem
-    
+
             input
                 flex-basis: 70%
                 border-bottom: 1px solid $dark-txt-color
@@ -77,7 +98,7 @@
                 overflow: hidden
                 position: absolute
                 z-index: -1
-            .inputfile + label 
+            .inputfile + label
                 // max-width: 80%
                 text-overflow: ellipsis
                 white-space: nowrap
@@ -92,20 +113,20 @@
                     width: 70%
             .inputfile:focus + label, .inputfile:hover + label
                 color: $red
-            .inputfile + label svg 
+            .inputfile + label svg
                 width: 2rem
                 height: 2rem
                 vertical-align: middle
                 fill: $dark-txt-color
             .inputfile:focus + label svg, .inputfile:hover + label svg
-                    fill: $red
+                fill: $red
         div:last-of-type
             justify-content: center
             align-items: center
-    
-    .btn-open 
+
+    .btn-open
         display: none
-    .button 
+    .button
         font-size: 1.6rem
         font-weight: bold
         background-color: $dark-txt-color
@@ -118,11 +139,9 @@
         transition: background .4s ease, color .4s ease
         z-index: 100
         positon: relative
-        &:hover 
-            border: none  
+        &:hover
+            border: none
             background-color: $orange
             box-shadow: 0 0 0 1px $red inset
             color: $red
             background-color: transparent
-  
-

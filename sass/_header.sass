@@ -25,7 +25,7 @@
         height: 100%
         width: 200px
         margin: auto
-       
+
         .wings img
             +position(auto,auto,$wings-bottom,$wings-left)
             bottom: $wings-bottom
@@ -54,7 +54,7 @@
             width: 30%
             height: auto
             opacity: 0
-            animation: smoke 5s linear 0s infinite 
+            animation: smoke 5s linear 0s infinite
             z-index: -2
     .star1 img
         +position($star-top,auto,auto,$star-left)
@@ -62,7 +62,7 @@
         height: $star-height
         transform: rotate(0)
         z-index: -1
-        animation: star-rotate 8s linear infinite 
+        animation: star-rotate 8s linear infinite
     .star2 img
         +position($star2-top,auto,auto,$star2-left)
         width: auto
@@ -85,3 +85,39 @@ h1
     background-color: $dark-txt-color
     color: $bright-txt-color
     letter-spacing: 2px
+
+@media (min-device-width: 1025px)
+
+    #headerGroup
+        height: 200px
+        nav
+            height: 120px
+            +position(20px,20px,auto,auto)
+        .rainbow
+            height: 200px
+        .unicorn
+            background-color: none
+            position: relative
+            height: 100%
+            width: 300px
+            margin: auto
+
+            .wings img
+                bottom: 50px
+                left: $wings-left
+                height: 80px
+            .camper img
+                height: 200px
+            .wheel img
+                +position(auto,auto,0,30%)
+                width: 50px
+               
+            .wheel2 img
+                +position(auto,auto,0,70%)
+                width: 50px
+                height: auto
+                animation: wheel-rotate 8s linear infinite
+    h1
+        +font-upperCase (8rem, 11rem)
+        letter-spacing: 4px
+        text-shadow: 1px 1px 4px rgba(245, 245, 245, 1)

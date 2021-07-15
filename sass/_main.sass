@@ -1,6 +1,5 @@
 main
     width: $main-width
-    
 
     article
         margin: 30px 0
@@ -8,7 +7,7 @@ main
         display: grid
         grid-template-columns: 1fr 2fr
         grid-template-rows: auto
-        grid-template-areas: "time h4" "h2 h2" "postImg postImg" "p1 p1" "routeMap routeMap" "mapCaption mapCaption" "p2 p2" "slider slider" "p3 p3" ". button"
+        grid-template-areas: "time h4" "h2 h2" "postImg postImg" "p1 p1" "points points" "routeMap routeMap" "mapCaption mapCaption" "p2 p2" "slider slider" "p3 p3"  "edit delete" ".. button"
         grid-gap: 10px 15px
         width: 100%
     time
@@ -37,6 +36,7 @@ main
         position: relative
     img
         width: 100%
+        height: 400px
         object-fit: cover
         object-position: bottom
         position: absolute
@@ -45,9 +45,26 @@ main
         left: 50%
     .p1
         grid-area: p1
+        height: 4.5rem
+        width: 100%
+        overflow: hidden
+        align-self: start
         +paragraph
 
-    #routeMap
+    .points
+        grid-area: points
+        width: 100%
+        padding: $main-padding
+        height: 1.5rem
+        +paragraph
+        position: relative
+        div
+            position: absolute
+            top: -1.7rem
+            height: 1.5rem
+            font-size: 1.5rem
+
+    .routeMap
         grid-area: routeMap
         height: 400px
         width: 100%
@@ -61,10 +78,11 @@ main
         flex-flow: column no-wrap
         justify-content: flex-start
         align-items: cener
-        span 
+
+        span
             font-size: 1.6rem
             &:first-child
-                width: 15% 
+                width: 15%
             &:last-child
                 font-weight: bolder
     .p2
@@ -80,8 +98,10 @@ main
         height: $img-height
         overflow: hidden
         position: relative
-  
-    .btn
+    
+   
+
+    .btn.down
         grid-area: button
         margin: 20px 30px 30px
         height: 3.6rem
@@ -95,6 +115,7 @@ main
         justify-self: end
         border-radius: 20px
         cursor: pointer
+        transition: all 0.5s ease
         div
             font-size: 1.6rem
             flex-grow: 1
@@ -103,3 +124,69 @@ main
         i
             font-size: 2rem
             flex-basis: 35%
+            transition: all 0.5s linear
+
+    .btn.edit, .btn.delete
+        margin: 10px 
+        height: 3.6rem
+        width: 12rem
+        color: $dark-txt-color
+      
+        background-color: white !important
+        +center-flex
+        flex-direction: row no-wrap
+        justify-self: center
+        border-radius: 20px
+        position: relative
+        cursor: pointer
+        transition: all 0.2s ease
+        &:hover
+            color: $red
+        &::after
+            content: ''
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 100%
+            height: 0.1rem
+            background-color: $red
+            opacity: 1
+            transition: opacity 200ms, transform 200ms
+            transform: scale(0)
+            transform-origin: center
+    
+        &:hover::after, &:focus::after 
+            transform: scale(1)
+
+
+            
+        div
+            font-size: 1.6rem
+            flex-grow: 1
+            text-align: left
+            margin-left: 15px
+        i
+            font-size: 2rem
+            flex-basis: 35%
+            transition: all 0.5s linear
+    .edit
+        grid-area: edit
+    .delete
+        grid-area: delete
+            
+.elemDisplay
+    overflow: hidden
+    transition: max-height 0.5s linear
+    height: auto
+
+.collapsed
+    max-height: 500px !important
+
+.hidden
+    max-height: 0
+
+.rotateHorizontal
+    transform: rotateX(180deg)
+
+.autoHeight
+    height: auto !important

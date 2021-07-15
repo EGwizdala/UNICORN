@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <title>Unicorn on road</title>
-    <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
+    
 </head>
 <body>
     <header>
@@ -36,11 +36,12 @@
     </header>
     <div class = "wrap">
     <div class = "modal display">
-        <div class="modal-image">
+        <!-- <div class="modal-image">
             <svg viewBox="0 0 32 32" style="fill:#48DB71"><path d="M1 14 L5 10 L13 18 L27 4 L31 8 L13 26 z"></path></svg>
-          </div>
+          </div> -->
+          <div class="close">&times;</div>
           <h1>Dodaj nową przygodę!</h1>
-          <form >
+          <form method = "POST" enctype = "multipart/form-data" action = "index.php">
             <div>
                 <label for="date">Data:</label>
                 <input type="date" id="date" name="date"></div>
@@ -82,7 +83,7 @@
                 
             </div>
             <div>
-                <input type = "submit" class= "button js-close" value = "Dodaj wpis"></button>
+                <input type="submit" class= "button js-close" value = "Dodaj wpis" name = "submit"></input>
             </div>
           </form>
           </div>
@@ -99,7 +100,7 @@
             <div class="label" id="country-name" >Tu byliśmy</div>
         </div>
         
-        <div class = "now positionLi" id = "state-name">Gdańsk</div>
+        <!-- <div class = "now positionLi" id = "state-name">Gdańsk</div>
         <div class = "last positionLi" id = "state-name">
             <div class= "arrow"><i class="fas fa-chevron-left"></i></div>
             <div class = "flex-scroll">
@@ -108,64 +109,93 @@
                 <div>Bezioro Borowo</div>
             </div>
             <div class= "arrow"><i class="fas fa-chevron-right"></i></div>
-        </div>
+        </div> -->
         <div class="map">
             <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
             <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
             <script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
             <script src="https://cdn.amcharts.com/lib/4/geodata/polandLow.js"></script>
+            <script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
             <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
             <div id="chartdiv"></div>
          </div>
         <div class = "mapInfo" id = "state-name">Polska</div>
-        <button class = "btn changeBtn"><div>Europa</div><i class="fas fa-chevron-right"></i></button>
+        <button class = "btn changeBtn" id = "changeBtn"><div class = "contaner">Europa</div><div><i class="fas fa-chevron-right"></i></div></button>
         <button class = "btn postBtn js-open is-active"><div>Dodaj wpis</div><i class="fas fa-exclamation"></i></button>
     </section>
     <section id="intro">
         <img src="img\camping.jpg" alt="camping place">
         <div class = "caption">
-            <span>Kamperowe</span>
-            <i class="far fa-arrow-alt-circle-down"></i>
-            <span>historie</span>
+            <div>Kamperowe</div>
+            <div class="request-loader"><div><i class="far fa-arrow-alt-circle-down"></i></div></div>
+            <div>historie</div>
         </div>
     </section>
     <main>
-        <article>
+        <article id = "article">
             <time>28.02.2020r</time>
             <h4>Borowo</h4>
             <h2>Pierwsze koty za płoty...</h2>
             <div class = "postImg"><img  src="img\post\borowo1.jpg" alt="Borowo-family"> </div>
             
-            <p class = "p1">Vivamus risus nibh, iaculis vitae aliquet ut, congue sed est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur in convallis purus. Duis luctus bibendum velit, id imperdiet ligula ornare eu. Vestibulum lacinia laoreet ligula non cursus. Aliquam tempus eget erat in aliquam. Integer sit amet neque ut augue hendrerit pellentesque.</p>
-            <div id='routeMap'></div>
+            <div class = "p1">Vivamus risus nibh, iaculis vitae aliquet ut, congue sed est. Pellentesque habitant
+                 morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur in convallis purus. Duis luctus bibendum velit, id imperdiet ligula ornare eu. Vestibulum lacinia laoreet ligula non cursus. Aliquam tempus eget erat in aliquam. Integer sit amet neque ut augue hendrerit pellentesque.
+            </div>
+            <div class="points"><div>.....</div></div>
+          
+            <div id='routeMap' class="routeMap hidden elemDisplay" data-lat = "53.852517" data-long = "17.577373"></div>
             
-            <div class = "mapCaption">
+            <div class = "mapCaption hidden elemDisplay">
                <span>Trasa:</span>
                <span>Borowo - Gdańsk</span>
             </div>
-            <p class = "p2">Dolor magna, faucibus in placerat et, consectetur id massa. Praesent varius lectus in malesuada luctus. Sed nec tortor sed sapien lobortis fermentum. Donec sed tellus mi. Proin luctus justo eu nulla dapibus eleifend. Suspendisse dui nisi, euismod at lectus et, pharetra malesuada est. Nam vel libero a risus placerat elementum. Phasellus eu auctor libero.</p>
-            <!-- <div class = "slider"><img src="img\post\borowo2.jpg" alt="Borowo-family"></div> -->
-            <p class = "p3">Vivamus risus nibh, iaculis vitae aliquet ut, congue sed est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur in convallis purus. Duis luctus bibendum velit, id imperdiet ligula ornare eu. Vestibulum lacinia laoreet ligula non cursus. Aliquam tempus eget erat in aliquam. Integer sit amet neque ut augue hendrerit pellentesque.</p>
-            <button type="button up" class = "btn down"><div>Zwiń</div><i class="fas fa-chevron-up"></i></button>
+            <p class = "p2 hidden elemDisplay">Dolor magna, faucibus in placerat et, consectetur id massa. Praesent varius lectus in malesuada luctus. Sed nec tortor sed sapien lobortis fermentum. Donec sed tellus mi. Proin luctus justo eu nulla dapibus eleifend. Suspendisse dui nisi, euismod at lectus et, pharetra malesuada est. Nam vel libero a risus placerat elementum. Phasellus eu auctor libero.</p>
+            <div class = "slider hidden elemDisplay"><img src="img\post\borowo2.jpg" alt="Borowo-family"></div>
+            <p class = "p3 hidden elemDisplay">Vivamus risus nibh, iaculis vitae aliquet ut, congue sed est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur in convallis purus. Duis luctus bibendum velit, id imperdiet ligula ornare eu. Vestibulum lacinia laoreet ligula non cursus. Aliquam tempus eget erat in aliquam. Integer sit amet neque ut augue hendrerit pellentesque.</p>
+            <button type="button" class = "btn edit hidden elemDisplay"><div>Edytuj!</div><i class="fas fa-pen"></i></button>
+
+            <button type="button " class = "btn delete hidden elemDisplay"><div>Usuń!</div><i class="fas fa-trash"></i></button>
+            
+            <button type="button down" class = "btn down"><div>Czytaj dalej!</div><i class="fas fa-chevron-down"></i></button>
         </article>
-        <article>
+
+        <article id = "article1">
             <time>31.01.2020r</time>
             <h4>Nowy dom</h4>
             <h2>Unicorn w drodze do domu...</h2>
-            <!-- <div class = "postImg"><img src="img\post\bunster.jpg" alt="Unicorn"></div> -->
-            <p class = "p1">Vivamus risus nibh, iaculis vitae aliquet ut, congue sed est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur in convallis purus. Duis luctus bibendum velit, id imperdiet ligula ornare eu. Vestibulum lacinia laoreet ligula non cursus. Aliquam tempus eget erat in aliquam. Integer sit amet neque ut augue hendrerit pellentesque.</p>
+            <div class = "postImg"><img src="img\post\bunster.jpg" alt="Unicorn"></div>
+            
+            <div class = "p1">Vivamus risus nibh, iaculis vitae aliquet ut, congue sed est. Pellentesque habitant
+             8    morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur in convallis purus. Duis luctus bibendum velit, id imperdiet ligula ornare eu. Vestibulum lacinia laoreet ligula non cursus. Aliquam tempus eget erat in aliquam. Integer sit amet neque ut augue hendrerit pellentesque.
+            </div>
+            <div class="points"><div>.....</div></div>
+    
+            <div id='routeMap1' class="routeMap hidden elemDisplay"></div>
+            
+            <div class = "mapCaption hidden elemDisplay">
+               <span>Trasa:</span>
+               <span>Borowo - Gdańsk</span>
+            </div>
+            <p class = "p2 hidden elemDisplay">Dolor magna, faucibus in placerat et, consectetur id massa. Praesent varius lectus in malesuada luctus. Sed nec tortor sed sapien lobortis fermentum. Donec sed tellus mi. Proin luctus justo eu nulla dapibus eleifend. Suspendisse dui nisi, euismod at lectus et, pharetra malesuada est. Nam vel libero a risus placerat elementum. Phasellus eu auctor libero.</p>
+            <div class = "slider hidden elemDisplay"><img src="img\post\borowo2.jpg" alt="Borowo-family"></div>
+            <p class = "p3 hidden elemDisplay">Vivamus risus nibh, iaculis vitae aliquet ut, congue sed est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur in convallis purus. Duis luctus bibendum velit, id imperdiet ligula ornare eu. Vestibulum lacinia laoreet ligula non cursus. Aliquam tempus eget erat in aliquam. Integer sit amet neque ut augue hendrerit pellentesque.</p>
+            <button type="button" class = "btn edit hidden elemDisplay"><div>Edytuj!</div><i class="fas fa-pen"></i></button>
+
+            <button type="button " class = "btn delete hidden elemDisplay"><div>Usuń!</div><i class="fas fa-trash"></i></button>
+            
             <button type="button down" class = "btn down"><div>Czytaj dalej!</div><i class="fas fa-chevron-down"></i></button>
-            </article>
-        <nav class = "navChanger" >
-            <div><i class="fas fa-chevron-left"></i></div>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
-            <div><i class="fas fa-chevron-right"></i></div>
-        </nav>
+        </article>
+        
     </main>
+    <nav class = "navChanger" >
+        <div><i class="fas fa-chevron-left"></i></div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <div><i class="fas fa-chevron-right"></i></div>
+    </nav>
     <footer>
 
         <p>Stworzone przez EGw. Wszystkie prawa zastrzeżone</p>
@@ -191,12 +221,13 @@
       
      
 </body>
-<script
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1giDCK5lTCBTPxu9qejOI_24NvyRn7rw&callback=initMap&libraries=&v=weekly"
-async
-></script> 
+<script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1giDCK5lTCBTPxu9qejOI_24NvyRn7rw"
+    async></script> 
 
 <script type="module" src="script/dynamics.js"></script>
-<script  src="script/main.js"></script>
+<script type="module" src="script/main.js"></script>
+<script src="script/upload.js"></script>
 
 </html>

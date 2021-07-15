@@ -1,19 +1,21 @@
 #maps
-    
+
     margin: 30px 0
     width: $main-width
     background-color: none
     display: grid
     grid-template-columns: 1fr 1fr
     grid-template-rows: auto
-    grid-template-areas: "now past" "nowPosition lastPosition" "map map" "mapInfo mapInfo" "changeBtn postBtn"
+    grid-template-areas: "now past" "map map" "mapInfo mapInfo" "changeBtn postBtn"
     .tag:first-child
         grid-area: now
+        width: 50vw
         &:hover
             text-decoration: underline
             color: $orange
     .tag:nth-child(2)
         grid-area: past
+        width: 50vw
         &:hover
             text-decoration: underline
             color: $red
@@ -21,37 +23,37 @@
         filter: invert(83%) sepia(35%) saturate(2053%) hue-rotate(322deg) brightness(104%) contrast(101%)
     .pin.red
         filter: invert(71%) sepia(49%) saturate(4487%) hue-rotate(328deg) brightness(85%) contrast(84%)
-    .tag 
+    .tag
         z-index: -1
         +center-flex
         flex-direction: row
         height: 7rem
         .pin
-            height: 4rem
+            height: 3.5rem
             width: auto
         div
-            font-size: 3rem
+            font-size: 2.5rem
             font-family: $header-font
-    .now
-        grid-area: nowPosition
-        flex-basis: 50%
-    .last
-        grid-area: lastPosition
-        flex-basis: 50%
-        +center-flex
-        flex-flow: row no-wrap
-        .arrow
-            display: flex
-            justify-content: center
-            align-items: center
-            flex-basis: 25%
-            height: 3rem
-            i
-                height: 3rem
-                line-height: 3rem
-                font-size: 1.8rem
+    // .now
+    //     grid-area: nowPosition
+    //     width: 50vw
+    // .last
+    //     grid-area: lastPosition
+    //     width: 50vw
+    //     +center-flex
+    //     flex-flow: row no-wrap
+    //     .arrow
+    //         display: flex
+    //         justify-content: center
+    //         align-items: center
+    //         max-width: 20px
+    //         height: 3rem
+    //         i
+    //             height: 3rem
+    //             line-height: 3rem
+    //             font-size: 1.8rem
 
-        .flex-scroll 
+        .flex-scroll
             display: flex
             flex-wrap: nowrap
             overflow-x: auto
@@ -59,6 +61,7 @@
             -ms-overflow-style: -ms-autohiding-scrollbar
             div
                 flex: 0 0 auto
+                max-width: 160px
                 flex-basis: 100%
                 align-self: center
                 text-align: center
@@ -72,15 +75,16 @@
         justify-content: center
         align-items: flex-start
     .map
-        z-index: -1
+        z-index: 1
         grid-area: map
-        display: inline-block
-        text-align: center
+        display: flex
+        justify-content: center
+        align-items: flex-start
         width: 100%
 
-    #chartdiv 
-        width: 100%
-        height: 50vh
+    #chartdiv
+        width: 90%
+        height: 60vh
 
     .mapInfo
         margin: $main-padding
@@ -106,9 +110,14 @@
         place-self: center
         cursor: pointer
         transition: all .3s
-        &:hover 
+        &:active
             color: #fff
-            background-color: darken($red, 5%)    
+            background-color: darken($red, 5%)
+        // &:hover, &:active
+        //     -webkit-tap-highlight-color: rgba(0,0,0,0)
+        //     -webkit-user-select: none
+        //     -webkit-touch-callout: none /*only to disable context menu on long press*/
+
         div
             font-size: 2.8rem
             flex-grow: 1
@@ -119,9 +128,21 @@
         i
             font-size: 2.2rem
             flex-basis: 25%
+    
+           
 
     .btn:first-child
         grid-area: changeBtn
 
     .btn:last-child
         grid-area: postBtn
+
+
+.animateLeftArrow
+    animation: arrow-move-left 4s linear infinite 
+
+.animateExclamation
+   animation: shake 1.2s cubic-bezier(.16,.07,.19,.50)  infinite 
+    transform: translate3d(0, 0, 0)
+    backface-visibility: hidden
+    perspective: 1000px
