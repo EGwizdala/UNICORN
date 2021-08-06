@@ -190,3 +190,80 @@ main
 
 .autoHeight
     height: auto !important
+
+
+@media (min-device-width: 1025px)
+
+    main
+        width: 80%
+        max-width: 1200px
+
+        article
+            margin: 30px 0
+            grid-template-columns: 1fr 2fr 1fr
+            grid-template-rows: 1fr
+            grid-template-areas: "time h4 ." "h2 h2 h2" "postImg postImg p1" "postImg postImg points" "postImg postImg button" "routeMap routeMap routeMap" "mapCaption mapCaption mapCaption" "p2 p2 p2" "slider slider p3"  "edit delete ."  
+            grid-gap: 5px 15px
+        time
+            grid-area: time
+            font-size: 1.8rem
+        h4
+            grid-area: h4
+            font-size: 1.8rem
+        h2
+            grid-area: h2
+            font-size: 2.8rem
+
+        .postImg
+            margin: $top-padding
+            grid-area: postImg
+            place-self: start center
+            height: $big-img-height
+        img
+            width: 100%
+            height: auto
+            
+        .p1
+            grid-area: p1
+            height: auto
+            max-height: 260px
+            padding: 0
+            align-self: center
+        .points
+            grid-area: points
+            padding: 0
+        .routeMap
+            grid-area: routeMap
+            height: 400px
+            width: 100%
+
+        .mapCaption
+            margin: $main-padding
+            margin: $main-padding
+            grid-area: mapCaption
+            width: 100%
+            display: flex
+            flex-flow: column no-wrap
+            justify-content: flex-start
+            align-items: cener
+
+            span
+                font-size: 1.6rem
+                &:first-child
+                    width: 15%
+                &:last-child
+                    font-weight: bolder
+        .p2
+            grid-area: p2
+            margin: 30px 0
+        .p3
+            grid-area: p3
+            padding: 0
+        .slider
+            grid-area: slider
+            width: 100%
+            height: $big-img-height
+        .btn.down
+            grid-area: button
+            margin: 0
+            
