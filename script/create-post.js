@@ -5,7 +5,7 @@ export class createPost {
     addPostToHTML(post) {
     const parent = document.querySelector('main');
     const article = document.createElement('article');
-    article.id = `article${mapCounter}`;
+      article.id = post.id;
       
 
 

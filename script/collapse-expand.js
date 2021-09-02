@@ -10,6 +10,7 @@ export class CollapseExpand{
     this.buttonDown = this.article.querySelector(".btn.down");
     this.postelements = [...this.article.querySelectorAll(".hidden")];
 
+    this.mediaScreen =   window.matchMedia('(min-width: 1025px)')  
     console.log(this.postelements)    
 
     this.buttonText = this.buttonDown.querySelector("div");
@@ -20,7 +21,11 @@ export class CollapseExpand{
 
 
     }
-
+    changeGrid() {
+        if (this.mediaScreen.matches ) {
+            toggleClass(this.article, "modyfyGrid")
+          }
+    }
     changetext(){
         console.log(this.postelements[0].className)
         console.log(typeof this.postelements[0].className)
@@ -36,7 +41,7 @@ export class CollapseExpand{
         toggleClass(this.buttonArrow, "rotateHorizontal")
     }
 
-   pointsDisplay(){
+    pointsDisplay(){
         toggleClass(this.points, "display")
     }
 
@@ -47,10 +52,10 @@ export class CollapseExpand{
 
     expandPost(){
         
-
         for (let i = 0; i < this.postelements.length; i++) {
             toggleClass(this.postelements[i], this.className)
         }
+        this.changeGrid();
         this.changetext();
         this.rotateArrow();
         this.pointsDisplay();

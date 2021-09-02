@@ -28,29 +28,48 @@ import {postElements } from './add-post.js';
 // 		input.addEventListener( 'blur', function(){ input.classList.remove( 'has-focus' ); });
 // 	});
 // }(document, window, 0));
-
+export let anchor = true;
+export const editBtns = [...document.querySelectorAll(".btn.edit")];
 
 export class OpenModalWindow {
-    constructor() {
+  constructor() {
+    this.form = document.querySelector('form')
+    this.addBtn = document.querySelector(".postBtn")
+    this.btnOpen = document.querySelector('.js-open');
+    this.btnClose = document.querySelector('.js-close');
+    this.btnX = document.querySelector('.close');
+    this.modal = document.querySelector('.modal');
+    this.modalChildren = document.querySelectorAll('.js-modal');
+
+    // this.editBtns = [...document.querySelectorAll(".btn.edit")];
+    
+    this.currentId = "";
+
+    
+
+
+
+
+    this.addBtn.addEventListener("click", this.openModal.bind(this));
+
+    // this.editBtn.addEventListener("click", this.editModal.bind(this));
+    editBtns.forEach(element => {
+      element.addEventListener("click", this.editModal.bind(this));
+    });
       
-      this.addBtn = document.querySelector(".postBtn")
-      this.btnOpen = document.querySelector('.js-open');
-      this.btnClose = document.querySelector('.js-close');
-      this.btnX = document.querySelector('.close');
-      this.modal = document.querySelector('.modal');
-      this.modalChildren = document.querySelectorAll('.js-modal');
+    
+    this.btnClose.addEventListener('click', this.closeModal.bind(this));
+      
+    
 
-      this.editBtn = document.querySelector(".btn.edit");
+   
+    this.btnX.addEventListener('click', this.closeModal.bind(this));
 
-      this.addBtn.addEventListener("click", this.openModal.bind(this));
-
-      this.editBtn.addEventListener("click", this.editModal.bind(this));
-
-      this.btnClose.addEventListener('click', this.closeModal.bind(this));
-      this.btnX.addEventListener('click', this.closeModal.bind(this));
-
+      
      
     }
+  
+
    
     hideModal() {
         dynamics.animate(this.modal, {
@@ -139,16 +158,28 @@ export class OpenModalWindow {
       //change modal content
       for (let i = 0; i < Object.keys(this.postContent).length; i++) {
         if(Object.keys(this.postContent)[i] === Object.keys(postElements)[i]){
-          Object.values(postElements)[i].value = Object.values(this.postContent)[i] 
+          Object.values(postElements)[i].value = Object.values(this.postContent)[i];
+          // console.log(Object.keys(this.postContent)[i], Object.keys(postElements)[i])
         }
       }
     }
-
-    // saveEditedContent(){
-    //   console.log(this.postContent)
-    // }
-
-    openModal() {
+  
+  overwritePost(article) {
+    this.article = document.querySelector(article);
+    this.article.querySelector('h2').innerText = postElements.h2.value;
+    this.article.querySelector('h4').innerText = postElements.h4.value;
+    this.article.querySelector('.p1').innerText = postElements.p1.value;
+    this.article.querySelector('.routeMap').dataset.lat = postElements.lat.value;
+    this.article.querySelector('.routeMap').dataset.long = postElements.long.value;
+  
+  
+  }
+  
+  
+  openModal() {
+      this.form.reset();
+      this.btnClose.value = "Dodaj wpis";
+      anchor = true
       this.toggleClasses();
       this.showModal();
       this.showModalChildren();
@@ -156,21 +187,34 @@ export class OpenModalWindow {
 
     editModal(event) {
       this.article = event.target.parentNode.parentNode;
-      this.editBtn.dataset.edition = "is-active";
       this.article.dataset.edition = "is-active";
-      console.log(this.article);
-      // this.saveEditedContent();
+      this.btnClose.value = "Zapisz zmiany";
+      this.articleId = this.article.id;
+      console.log(event);
+      anchor = false;
       this.toggleClasses();
      
       this.getContent(this.article)
       this.showModal();
       this.showModalChildren();
+
+      this.currentId = this.articleId;
     }
   
     closeModal() {
       this.hideModal();
       this.toggleClasses();
-      this.showBtn()
+      this.showBtn();
+  
+
+      if (!anchor) {
+        
+    
+        console.log(anchor);
+        console.log(this.currentId);
+        this.overwritePost(`#${this.currentId}`)
+      }
+      
     }
 
     

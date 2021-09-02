@@ -767,6 +767,13 @@ h1 {
   background-color: transparent;
 }
 
+@media (min-device-width: 1025px) {
+  .modal {
+    width: 60%;
+    max-width: 800px;
+  }
+}
+
 #maps {
   margin: 30px 0;
   width: 100vw;
@@ -1216,7 +1223,7 @@ main h2 {
   padding: 0 30px;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-column-span: 3;
   grid-area: h2;
   font-size: 2.5rem;
   font-weight: 600;
@@ -1225,6 +1232,7 @@ main h2 {
 main .postImg {
   margin: 0 30px;
   -ms-grid-row: 3;
+  -ms-grid-row-span: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: postImg;
@@ -1253,15 +1261,13 @@ main img {
 }
 
 main .p1 {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
   grid-area: p1;
   height: 4.5rem;
   width: 100%;
   overflow: hidden;
   -ms-flex-item-align: start;
-      -ms-grid-row-align: start;
       align-self: start;
   padding: 0 30px;
   font-size: 1.5rem;
@@ -1269,9 +1275,8 @@ main .p1 {
 }
 
 main .points {
-  -ms-grid-row: 5;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
   grid-area: points;
   width: 100%;
   padding: 0 30px;
@@ -1292,7 +1297,7 @@ main .points div {
 main .routeMap {
   -ms-grid-row: 6;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-column-span: 3;
   grid-area: routeMap;
   height: 400px;
   width: 100%;
@@ -1303,7 +1308,7 @@ main .mapCaption {
   margin: 0 30px;
   -ms-grid-row: 7;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-column-span: 3;
   grid-area: mapCaption;
   width: 100%;
   display: -webkit-box;
@@ -1336,7 +1341,7 @@ main .mapCaption span:last-child {
 main .p2 {
   -ms-grid-row: 8;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-column-span: 3;
   grid-area: p2;
   padding: 0 30px;
   font-size: 1.5rem;
@@ -1344,9 +1349,8 @@ main .p2 {
 }
 
 main .p3 {
-  -ms-grid-row: 10;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
+  -ms-grid-row: 9;
+  -ms-grid-column: 3;
   grid-area: p3;
   padding: 0 30px;
   font-size: 1.5rem;
@@ -1365,8 +1369,8 @@ main .slider {
 }
 
 main .btn.down {
-  -ms-grid-row: 12;
-  -ms-grid-column: 2;
+  -ms-grid-row: 10;
+  -ms-grid-column: 3;
   grid-area: button;
   margin: 20px 30px 30px;
   height: 3.6rem;
@@ -1483,13 +1487,13 @@ main .btn.edit i, main .btn.delete i {
 }
 
 main .edit {
-  -ms-grid-row: 11;
+  -ms-grid-row: 10;
   -ms-grid-column: 1;
   grid-area: edit;
 }
 
 main .delete {
-  -ms-grid-row: 11;
+  -ms-grid-row: 10;
   -ms-grid-column: 2;
   grid-area: delete;
 }
@@ -1573,7 +1577,6 @@ main .delete {
     max-height: 260px;
     padding: 0;
     -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
         align-self: center;
   }
   main .points {
@@ -1627,6 +1630,7 @@ main .delete {
     -ms-grid-column-span: 3;
     grid-area: p2;
     margin: 30px 0;
+    padding: 0;
   }
   main .p3 {
     -ms-grid-row: 9;
@@ -1643,11 +1647,15 @@ main .delete {
     height: 440px;
   }
   main .btn.down {
-    -ms-grid-row: 5;
+    -ms-grid-row: 10;
     -ms-grid-column: 3;
     grid-area: button;
     margin: 0;
   }
+}
+
+.modyfyGrid {
+      grid-template-areas: "time h4 ." "h2 h2 h2" "postImg postImg p1" "postImg postImg points" "postImg postImg ." "routeMap routeMap routeMap" "mapCaption mapCaption mapCaption" "p2 p2 p2" "slider slider p3"  "edit delete button";
 }
 
 .navChanger {

@@ -45,7 +45,7 @@ class MainInit {
   }
 
   firstPostCollapsExpand() {
-    const article = document.getElementById("article") 
+    const article = document.getElementById("article0") 
     const article1 = document.getElementById("article1") 
     const expandArticle1 = new CollapseExpand(article);
     const expandArticle2 = new CollapseExpand(article1);
@@ -95,6 +95,4 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 }
 
 
-const btnEdit = document.querySelector(".btn.edit");
-// const openModal = new OpenModalWindow;
-//   btnEdit.addEventListener("click", openModal.openModal)
+
