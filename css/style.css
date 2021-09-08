@@ -1084,7 +1084,7 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: none;
+  text-decoration: none;
 }
 
 #intro .caption .request-loader div {
@@ -1092,6 +1092,8 @@ h1 {
   font-size: 72px;
   top: 5px;
   left: -5px;
+  color: red;
+  background-color: none;
 }
 
 #intro .caption .request-loader div:after {
@@ -1161,8 +1163,8 @@ h1 {
           animation-name: ripple;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-timing-function: cubic-bezier(0.65, 0, 0.34, 1);
@@ -1171,12 +1173,13 @@ h1 {
 }
 
 #intro .caption .request-loader div i {
+  cursor: pointer;
   font-size: 7rem;
   color: #FFAE4D;
 }
 
 #intro .caption .request-loader div i:hover {
-  coror: #CA6B4A;
+  color: #CA6B4A;
 }
 
 @media (min-device-width: 1025px) {

@@ -23,26 +23,35 @@
             &::first-letter
                 font-size: 4.5rem
         .request-loader 
-            position: relative
-            display: flex
-            flex-direction: row
-            justify-content: center
-            align-items: center
-            background-color: none
-            div
                 position: relative
-                font-size: 72px
-                top: 5px
-                left: -5px
-                &:after 
-                    +rings(3s, 0s)
-                &:before 
-                    +rings(3s, 0.5s)
-                i
-                    font-size: 7rem
-                    color: $orange
-                    &:hover
-                        coror: $red
+                display: flex
+                flex-direction: row
+                justify-content: center
+                align-items: center
+                text-decoration: none
+    
+                div
+                    position: relative
+                    font-size: 72px
+                    top: 5px
+                    left: -5px
+                    color: red
+                    background-color: none
+                    &:after 
+                        +rings(3s, 0s)
+                    &:before 
+                        +rings(3s, 0s)
+                    i
+                        cursor: pointer
+                        font-size: 7rem
+                        color: $orange
+                        &:hover
+                            color: $red
+                        
+
+
+                       
+
                         
 @media (min-device-width: 1025px)
     #intro
