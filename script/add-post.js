@@ -3,6 +3,7 @@ import { mapInit } from './mapinit.js';
 import { addPin } from './add-pin.js';
 import { CollapseExpand } from './collapse-expand.js';
 import { OpenModalWindow, editBtns, anchor } from './open-modal.js';
+import {deleteBtns, DeletePost} from './delete-post.js'
 
 
 
@@ -63,10 +64,13 @@ export function addthepost() {
  
   const article = document.getElementById(id);
 
-  editBtns.push(article.querySelector(".btn.edit"));
-    console.log(article)
-    console.log(editBtns)
-  const collapseExpand = new CollapseExpand(article);
+    editBtns.push(article.querySelector(".btn.edit"));
+    deleteBtns.push(article.querySelector(".btn.delete"));
+
+    console.log(deleteBtns)
+    const collapseExpand = new CollapseExpand(article);
+    const deletePost = new DeletePost;
+  
   }
  const newPost = new OpenModalWindow;
 }

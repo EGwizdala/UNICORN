@@ -6,6 +6,7 @@ import { MainMap, chart, polygonSeries } from './main-map.js';
 import { Animations } from './animatons.js';
 import { Navigation } from './navigation.js';
 import { CollapseExpand } from './collapse-expand.js'
+import {deleteBtns, DeletePost} from './delete-post.js'
 // import { AddPin } from './add-pin.js';
 
 //INIT MAIN MAP
@@ -96,3 +97,4 @@ if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigat
 
 
 
+const deletePost = new DeletePost;

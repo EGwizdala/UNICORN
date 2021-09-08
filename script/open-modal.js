@@ -1,5 +1,6 @@
 import { toggleClass } from './library.js';
 import {postElements } from './add-post.js';
+import { changeModalContent, overwritePost } from './modify-post.js';
 // 'use strict';
 //MODAL FILE LOAD
 // ( function ( document, window, index )
@@ -40,35 +41,20 @@ export class OpenModalWindow {
     this.btnX = document.querySelector('.close');
     this.modal = document.querySelector('.modal');
     this.modalChildren = document.querySelectorAll('.js-modal');
-
     // this.editBtns = [...document.querySelectorAll(".btn.edit")];
-    
     this.currentId = "";
-
-    
-
-
-
-
     this.addBtn.addEventListener("click", this.openModal.bind(this));
 
     // this.editBtn.addEventListener("click", this.editModal.bind(this));
     editBtns.forEach(element => {
       element.addEventListener("click", this.editModal.bind(this));
     });
-      
-    
     this.btnClose.addEventListener('click', this.closeModal.bind(this));
-      
-    
-
    
     this.btnX.addEventListener('click', this.closeModal.bind(this));
 
-      
      
     }
-  
 
    
     hideModal() {
@@ -144,36 +130,6 @@ export class OpenModalWindow {
       toggleClass(this.modal, 'is-active');
       toggleClass(this.modal, 'display');
     } 
-
-    getContent(article) {
-      this.postContent = {
-        h2: article.querySelector('h2').innerText,
-        h4: article.querySelector('h4').innerText,
-        p1: article.querySelector('.p1').innerText,
-        lat: article.querySelector('.routeMap').dataset.lat,
-        long: article.querySelector('.routeMap').dataset.long,
-      }
-      
-
-      //change modal content
-      for (let i = 0; i < Object.keys(this.postContent).length; i++) {
-        if(Object.keys(this.postContent)[i] === Object.keys(postElements)[i]){
-          Object.values(postElements)[i].value = Object.values(this.postContent)[i];
-          // console.log(Object.keys(this.postContent)[i], Object.keys(postElements)[i])
-        }
-      }
-    }
-  
-  overwritePost(article) {
-    this.article = document.querySelector(article);
-    this.article.querySelector('h2').innerText = postElements.h2.value;
-    this.article.querySelector('h4').innerText = postElements.h4.value;
-    this.article.querySelector('.p1').innerText = postElements.p1.value;
-    this.article.querySelector('.routeMap').dataset.lat = postElements.lat.value;
-    this.article.querySelector('.routeMap').dataset.long = postElements.long.value;
-  
-  
-  }
   
   
   openModal() {
@@ -194,7 +150,7 @@ export class OpenModalWindow {
       anchor = false;
       this.toggleClasses();
      
-      this.getContent(this.article)
+      changeModalContent(this.article, postElements);
       this.showModal();
       this.showModalChildren();
 
@@ -212,7 +168,7 @@ export class OpenModalWindow {
     
         console.log(anchor);
         console.log(this.currentId);
-        this.overwritePost(`#${this.currentId}`)
+        overwritePost(`#${this.currentId}`, postElements)
       }
       
     }
