@@ -16,7 +16,7 @@ It is a prototype of a journal application. It has the ability to add entries wi
 * [Contact](#contact)
 
 ## General info
-The game was written for my daughter. I also wanted to train object oriented programming. Also I wanted to practise keyframes, media queries and sass preprocessor. All animations are my authorship.
+The concept of the application is to have aility to write my tr
 
 You start the game by selecting a letter from the alphabet table. When an image appears, your goal is to create the word that that image represents. You make a word from mixed up letters with two randomly added letters. When you finish the task, you will earn a point. After collecting six points, a reward will appear. 
 
