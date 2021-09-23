@@ -1,9 +1,5 @@
-��#� �U�N�I�C�O�R�N�
-�
-�
-https://egwizdala.github.io/UNICORN/
 # UNICORN - travelers journal
-It is a prototype of a journal application. It has the ability to add entries with date, location and photos. 
+It is a prototype or more a model of a journal app. User can have the ability to add entries with date, location and photos. 
 
 ## Table of contents
 * [General info](#general-info)
@@ -16,36 +12,40 @@ It is a prototype of a journal application. It has the ability to add entries wi
 * [Contact](#contact)
 
 ## General info
-The concept of the application is to have aility to write my tr
+The concept of the application is to have the ability to write a journal from my family latest trips with or camper - UNICORN. I realized that keeping a regular diary is too complicated because I didn't always have the conditions to write something with pen in my notebook, and it should be easier to add posts on my phone. 
 
-You start the game by selecting a letter from the alphabet table. When an image appears, your goal is to create the word that that image represents. You make a word from mixed up letters with two randomly added letters. When you finish the task, you will earn a point. After collecting six points, a reward will appear. 
+The concept is simple: the user has a form by which he fills in the data of a particular post. The data are: title, date, destination, location (latitude and longitude), description and photos. After adding a post, it appears on the home page.
 
 ## Layout
-![GameScreen](/img/GameScreen.png)
+![MobileScreen](/img/mobile.png)
+![FormScreen](/img/form.png)
 
-## Technologies
+## Technologies and librarys
 * HTML5
 * SASS/CSS (flexbox, media query, keyframes, mixins, variables in use)
-* JAVA SCRIPT
+* JAVA SCRIPT (partly using object oriented programming)
+* SVG
+* amcharts4 Maps
+* dynamics.js
+* jonsuh.com/hamburgers
+
 * Written in Visual Studio Code
 
 ## Setup
-Link to finished game:
-https://github.com/EGwizdala/WORDS_GAME
+Link to the model:
+https://egwizdala.github.io/UNICORN/
 
 ## Features
-* The game is responsive to large mobile devices such as tablets.
+The location is automatically added to the main map developed with SVG files and a Google map in each post. The photo database is still in progress, so the functionality is not able yet. 
 
-To-do list:
-* Add a hint button, that gives one letter of the word.
-* Make more words to gues.
-* Clean up the code, put classes to separate files. 
+The app is adapted to mobile devices and desktops. In the next step is to make the app automatically add route from latest place to current. In the future, I am planning to combine photos with location and make the ability to show route preview with photos after each trip. 
 
 ## Status
 Project is: _in progress_
+It is going to be developed to 100% working mobile and desktop app. Technologies planned to use: node.js, moongoDB, express.js, mySQL.
 
 ## Inspiration
 Some of the Icons made by Freepik www.flaticon.com
 
 ## Contact
-Created by Emilia Gwizdala [emilia.gwizdala@gmail.com](https://www.flynerd.pl/) - feel free to contact me!
+Created by Emilia Gwizdala [emilia.gwizdala@gmail.com] - feel free to contact me!
