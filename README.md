@@ -14,7 +14,7 @@ It is a prototype of a journal. User has the ability to add entries with date, l
 ## General info
 The concept of the application is to have the ability to write a journal from my family latest trips with or camper - UNICORN. I realized that keeping a regular diary is too complicated because I didn't always have the conditions to write something with pen in my notebook, and it should be easier to add posts on my phone. 
 
-The concept is simple: the user has a form by which he fills in the data of a particular post. The data are: title, date, destination, location (latitude and longitude), description and photos. After adding a post, it appears on the home page.
+The concept is simple: the user has a form by which he fills in the data of a particular post. The data are: title, date, destination, location (latitude and longitude), description and photos. After adding a post, it appears on the home page. The location is automatically added to the main map developed with SVG files and a Google map in each post. The photo database is still in progress, so the functionality is not able yet. There are two possibilities of main map: Poland and Europe. User can change the map with a button. Post also is added with a button located on main site. 
 
 ## Layout
 ![MobileScreen](/img/mobile.png)
@@ -36,7 +36,7 @@ Link to the model:
 https://egwizdala.github.io/UNICORN/
 
 ## Features
-The location is automatically added to the main map developed with SVG files and a Google map in each post. The photo database is still in progress, so the functionality is not able yet. 
+
 
 The app is adapted to mobile devices and desktops. In the next step is to make the app automatically add route from latest place to current. In the future, I am planning to combine photos with location and make the ability to show route preview with photos after each trip. 
 
