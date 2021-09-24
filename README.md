@@ -1,5 +1,5 @@
 # UNICORN - travelers journal
-It is a prototype or more a model of a journal app. User can have the ability to add entries with date, location and photos. 
+It is a prototype of a journal. User has the ability to add entries with date, location and photos. 
 
 ## Table of contents
 * [General info](#general-info)
@@ -20,10 +20,10 @@ The concept is simple: the user has a form by which he fills in the data of a pa
 ![MobileScreen](/img/mobile.png)
 ![FormScreen](/img/form.png)
 
-## Technologies and librarys
+## Technologies and libraries
 * HTML5
 * SASS/CSS (flexbox, media query, keyframes, mixins, variables in use)
-* JAVA SCRIPT (partly using object oriented programming)
+* JAVA SCRIPT (using object oriented programming)
 * SVG
 * amcharts4 Maps
 * dynamics.js
