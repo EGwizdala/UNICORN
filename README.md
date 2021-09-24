@@ -16,6 +16,8 @@ The concept of the application is to have the ability to write a journal from my
 
 The concept is simple: the user has a form by which he fills in the data of a particular post. The data are: title, date, destination, location (latitude and longitude), description and photos. After adding a post, it appears on the home page. The location is automatically added to the main map developed with SVG files and a Google map in each post. The photo database is still in progress, so the functionality is not able yet. There are two possibilities of main map: Poland and Europe. User can change the map with a button. Post also is added with a button located on main site. 
 
+Keyframes are based on free SVG images. The animations are my invention. 
+
 ## Layout
 ![MobileScreen](/img/mobile.png)
 ![FormScreen](/img/form.png)
