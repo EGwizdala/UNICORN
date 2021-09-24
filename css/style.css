@@ -1244,8 +1244,8 @@ main .postImg {
   height: 220px;
   border-radius: 23px;
   overflow: hidden;
-  -webkit-box-shadow: 4px -4px 24px -3px rgba(0, 0, 0, 0.56);
-          box-shadow: 4px -4px 24px -3px rgba(0, 0, 0, 0.56);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 2px 5px 10px;
+          box-shadow: rgba(0, 0, 0, 0.24) 2px 5px 10px;
   position: relative;
 }
 
